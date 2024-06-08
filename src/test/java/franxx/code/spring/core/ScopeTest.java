@@ -32,4 +32,18 @@ public class ScopeTest {
         Assertions.assertNotSame(foo1, foo3);
 
     }
+
+    @Test
+    void doubleScope() {
+        Bar bar1 = applicationContext.getBean("scope", Bar.class);
+        Bar bar2 = applicationContext.getBean("scope", Bar.class);
+        Bar bar3 = applicationContext.getBean("scope", Bar.class);
+        Bar bar4 = applicationContext.getBean("scope", Bar.class);
+
+        Assertions.assertSame(bar1, bar3);
+        Assertions.assertSame(bar2, bar4);
+
+        Assertions.assertNotSame(bar1, bar2);
+        Assertions.assertNotSame(bar3, bar4);
+    }
 }
