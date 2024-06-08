@@ -30,7 +30,7 @@ class FooBarTestDependencyInjectionTest {
     @Test
     void createWithSpring() {
 
-        Foo foo = context.getBean(Foo.class);
+        Foo foo = context.getBean("fooSecond", Foo.class);
         Bar bar = context.getBean(Bar.class);
 
         FooBar fooBar = context.getBean(FooBar.class);
