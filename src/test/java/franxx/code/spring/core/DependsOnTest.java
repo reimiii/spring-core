@@ -1,5 +1,6 @@
 package franxx.code.spring.core;
 
+import franxx.code.spring.core.data.Foo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -16,5 +17,6 @@ public class DependsOnTest {
     @Test
     void create() {
 
+        Foo bean = applicationContext.getBean(Foo.class);
     }
 }
