@@ -1,6 +1,7 @@
 package franxx.code.spring.core;
 
 import franxx.code.spring.core.data.Connection;
+import franxx.code.spring.core.data.Server;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -19,5 +20,10 @@ public class LifeCycleTest {
     @Test
     void create() {
         Connection bean = applicationContext.getBean(Connection.class);
+    }
+
+    @Test
+    void testServer() {
+        Server server = applicationContext.getBean(Server.class);
     }
 }
