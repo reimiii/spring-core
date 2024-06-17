@@ -1,4 +1,4 @@
-package franxx.code.spring.core;
+package franxx.code.spring.core.conf;
 
 import franxx.code.spring.core.data.Bar;
 import org.springframework.context.annotation.Bean;
