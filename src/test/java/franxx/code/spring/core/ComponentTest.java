@@ -2,7 +2,9 @@ package franxx.code.spring.core;
 
 import franxx.code.spring.core.data.Bar;
 import franxx.code.spring.core.data.Foo;
+import franxx.code.spring.core.repository.CategoryRepository;
 import franxx.code.spring.core.repository.ProductRepository;
+import franxx.code.spring.core.service.CategoryService;
 import franxx.code.spring.core.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -33,5 +35,13 @@ public class ComponentTest {
         ProductRepository productRepository = context.getBean(ProductRepository.class);
 
         Assertions.assertSame(productRepository, productService.getRepository());
+    }
+
+    @Test
+    void depInjSetter() {
+        CategoryRepository categoryRepository = context.getBean(CategoryRepository.class);
+        CategoryService categoryService = context.getBean(CategoryService.class);
+
+        Assertions.assertSame(categoryRepository, categoryService.getRepository());
     }
 }
