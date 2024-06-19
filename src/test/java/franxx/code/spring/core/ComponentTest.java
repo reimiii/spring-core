@@ -50,8 +50,10 @@ public class ComponentTest {
     @Test
     void depInjField() {
         CustomerService service = context.getBean(CustomerService.class);
-        CustomerRepository repository = context.getBean(CustomerRepository.class);
+        CustomerRepository normal = context.getBean("normalCustomerRepository", CustomerRepository.class);
+        CustomerRepository premium = context.getBean("premiumCustomerRepository", CustomerRepository.class);
 
-        Assertions.assertSame(repository, service.getRepository());
+        Assertions.assertSame(normal, service.getNormalRepository());
+        Assertions.assertSame(premium, service.getPremiumRepository());
     }
 }
