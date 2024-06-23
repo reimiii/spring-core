@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 public class FooApplication {
 
     @Bean
-    public Foo foo(Bar bar) {
+    public Foo foo() {
         return new Foo();
     }
 
