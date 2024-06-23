@@ -1,6 +1,7 @@
 package franxx.code.spring.core;
 
 import franxx.code.spring.core.listener.LoginSuccesListener;
+import franxx.code.spring.core.listener.UserListener;
 import franxx.code.spring.core.service.UserSevice;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,8 @@ public class EventListenerTest {
     @Configuration
     @Import({
             UserSevice.class,
-            LoginSuccesListener.class
+            LoginSuccesListener.class,
+            UserListener.class
     })
     static class ConfEvent {
     }
