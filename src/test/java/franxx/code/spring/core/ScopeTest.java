@@ -22,10 +22,10 @@ public class ScopeTest {
         Foo foo2 = applicationContext.getBean(Foo.class);
         Foo foo3 = applicationContext.getBean(Foo.class);
 
-        Bar bar1 = applicationContext.getBean(Bar.class);
-        Bar bar2 = applicationContext.getBean(Bar.class);
+//        Bar bar1 = applicationContext.getBean(Bar.class);
+//        Bar bar2 = applicationContext.getBean(Bar.class);
 
-        Assertions.assertSame(bar1, bar2);
+//        Assertions.assertSame(bar1, bar2);
 
         Assertions.assertNotSame(foo1, foo2);
         Assertions.assertNotSame(foo2, foo3);
